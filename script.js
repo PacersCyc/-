@@ -20,7 +20,7 @@ function stopAutoPlay(){
 function startAutoPlay(){
    timer = setInterval(function(){
        index++;
-       if(index >= len){
+       if(index >= len-1){
           index = 0;
        }
        changeImg();
@@ -60,20 +60,20 @@ function slideImg(){
     // 下一张
     next.onclick = function(){
        index++;
-       if(index>=len) index=0;
+       if(index>=len-1) index=0;
        changeImg();
     }
     // 上一张
     prev.onclick = function(){
        index--;
-       if(index<0) index=len-1;
+       if(index<0) index=len-2;
        changeImg();
     }
 }
 slideImg();
 //商城限时购倒计时
 function FreshTime(){
-	var endtime=new Date("2017/6/18,12:00:00"),
+	var endtime=new Date("2017/6/24,12:00:00"),
 		nowtime=new Date(),
 		lefttime=parseInt((endtime.getTime()-nowtime.getTime())/1000),
 		//d=parseInt(lefttime/(60*60*24)),
